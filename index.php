@@ -349,7 +349,7 @@ if($_GET['url']) {
 
 
 
-    <?php echo $modal;?>
+    <?php if(!empty($modal)) echo $modal;?>
     
 
 
@@ -367,6 +367,17 @@ if($_GET['url']) {
     <!--Main layout-->
     <main class="mt-5 pt-5">
         <div class="container">
+            
+            <div class="row justify-content-center">
+            <form class="form-inline" action="index.php" method="GET">
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2" class="sr-only">Url</label>
+                    <input type="text" class="form-control" id="inputPassword2" name="url" placeholder="https://cine24h.net/...">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Extraer</button>
+            </form>
+            
+        </div>
 
 
             <hr class="my-5" />
@@ -376,7 +387,7 @@ if($_GET['url']) {
                 <!--Grid row-->
                 <div class="row mb-4 wow fadeIn">
                     <!--Grid column-->
-                    <?php echo $card;?>
+                    <?php if(!empty($card)) echo $card;?>
 
                     <!--Grid column-->
                 </div>
